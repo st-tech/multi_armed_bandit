@@ -9,20 +9,20 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'multi_armed_bandit'
+gem specific_install -l 'git://github.com/vasilyjp/multi_armed_bandit.git'
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install multi_armed_bandit
 
 ## Usage
 
-TODO: Write usage instructions here
+
+```ruby
+require 'multi_armed_bandit'
+include MultiArmedBandit
+
+sm = MultiArmedBandit::Softmax.new(0.01, 3)
+probs = sm.bulk_update([1000,1000,1000], [72,57,49])
+```
+
 
 ## Development
 
