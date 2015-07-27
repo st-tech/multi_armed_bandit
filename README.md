@@ -1,8 +1,10 @@
 # MultiArmedBandit
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/multi_armed_bandit`. To experiment with that code, run `bin/console` for an interactive prompt.
+This repo contains code in Ruby for solving Multi-Armed Bandit problems, including:
 
-TODO: Delete this and the text above, and describe your gem
+* Softmax (Boltzmann)
+
+Other major algorithms are under developed.
 
 ## Installation
 
