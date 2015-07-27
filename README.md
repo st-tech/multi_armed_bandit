@@ -6,10 +6,6 @@ TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
-# Gem::SpecificInstall
-
-## Installation
-
 Add this line to your application's Gemfile:
 
     gem 'multi_armed_bandit'
