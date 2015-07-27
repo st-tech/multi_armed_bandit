@@ -8,15 +8,7 @@ Other major algorithms are under developed.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'multi_armed_bandit'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+By executing the following line, you can install the gem file from the GitHub.
 
     $ gem specific_install -l 'git://github.com/vasilyjp/multi_armed_bandit.git'
 
