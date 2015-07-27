@@ -27,8 +27,13 @@ Or install it yourself as:
 require 'multi_armed_bandit'
 include MultiArmedBandit
 
+# Create a object
 sm = MultiArmedBandit::Softmax.new(0.01, 3)
+
+# Trial 1
 probs = sm.bulk_update([1000,1000,1000], [72,57,49])
+# Trial 2
+probs = sm.bulk_update([1000,1000,1000], [65,46,52])
 ```
 
 
