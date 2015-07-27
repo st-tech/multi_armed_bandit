@@ -6,14 +6,24 @@ TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
+# Gem::SpecificInstall
+
+## Installation
+
 Add this line to your application's Gemfile:
 
-```ruby
-gem specific_install -l 'git://github.com/vasilyjp/multi_armed_bandit.git'
-```
+    gem 'multi_armed_bandit'
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem specific_install -l 'git://github.com/vasilyjp/multi_armed_bandit.git'
+
 
 ## Usage
-
 
 ```ruby
 require 'multi_armed_bandit'
