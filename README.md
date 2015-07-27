@@ -1,6 +1,6 @@
 # MultiArmedBandit
 
-This repo contains code in Ruby for solving Multi-Armed Bandit problems, including:
+This repo contains Ruby code for solving Multi-Armed Bandit problems, including:
 
 * Softmax (Boltzmann)
 
