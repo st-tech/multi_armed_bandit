@@ -20,13 +20,14 @@ require 'multi_armed_bandit'
 include MultiArmedBandit
 ```
 
-Create an object of Softmax class. The first arg is temperature. If we set temperature = 0.0, this will give us deterministic choice of the arm which has highest value. In contrast, if we set temperature = ∞, all actions have nearly the same probability. In a pracitcal sense, temperature tend to be between 0.01 and 1.0.
+Create an object of Softmax class. The first param is temperature. If we set temperature = 0.0, this will give us deterministic choice of the arm which has highest value. In contrast, if we set temperature = ∞, all actions have nearly the same probability. In a pracitcal sense, temperature tend to be between 0.01 and 1.0.
 
-The second arg is number of arms.
+The second param is number of arms.
 ```ruby
 sm = MultiArmedBandit::Softmax.new(0.01, 3)
 ```
 
+By giving lists of number of trials and rewards to bulk_update methd, it returns the predicted probabilities.
 ```ruby
 # Trial 1
 probs = sm.bulk_update([1000,1000,1000], [72,57,49])
@@ -35,7 +36,6 @@ counts = probs.map{|p| (p*3000).round }
 # Trial 2
 probs = sm.bulk_update(counts, [154,17,32])
 ```
-
 
 ## Development
 
