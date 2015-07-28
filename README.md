@@ -1,10 +1,11 @@
 # MultiArmedBandit
 
-This repo contains Ruby code for solving Multi-Armed Bandit problems, including:
+This repo contains Ruby code for solving Multi-Armed Bandit problems. This includes the following algorithms:
 
+* Epsilon-Greedy
 * Softmax (Boltzmann)
 
-Other major algorithms are under developed.
+Other major algorithms are under development.
 
 ## Installation
 
