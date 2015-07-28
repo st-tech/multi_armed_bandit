@@ -14,13 +14,18 @@ By executing the following line, you can install the gem from the GitHub repo.
 
 ## Usage
 
+Include MultiArmedBandit class by putting the following code.
 ```ruby
 require 'multi_armed_bandit'
 include MultiArmedBandit
+```
 
-# Create an object
+Create an object of Softmax class. The first arg is temperature. If we set temperature = 0.0, this will give us deterministic choice of the arm which has highest value. In contrast, if we set temperature = ∞, all actions have nearly the same probability. The second arg is number of arms. In a pracitcal sense, temperature tend to be between 0.01 and 1.0.
+```ruby
 sm = MultiArmedBandit::Softmax.new(0.01, 3)
+```
 
+```ruby
 # Trial 1
 probs = sm.bulk_update([1000,1000,1000], [72,57,49])
 counts = probs.map{|p| (p*3000).round }
