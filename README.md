@@ -20,7 +20,9 @@ require 'multi_armed_bandit'
 include MultiArmedBandit
 ```
 
-Create an object of Softmax class. The first arg is temperature. If we set temperature = 0.0, this will give us deterministic choice of the arm which has highest value. In contrast, if we set temperature = ∞, all actions have nearly the same probability. The second arg is number of arms. In a pracitcal sense, temperature tend to be between 0.01 and 1.0.
+Create an object of Softmax class. The first arg is temperature. If we set temperature = 0.0, this will give us deterministic choice of the arm which has highest value. In contrast, if we set temperature = ∞, all actions have nearly the same probability. In a pracitcal sense, temperature tend to be between 0.01 and 1.0.
+
+The second arg is number of arms.
 ```ruby
 sm = MultiArmedBandit::Softmax.new(0.01, 3)
 ```
