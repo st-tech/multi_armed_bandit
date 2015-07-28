@@ -23,8 +23,10 @@ sm = MultiArmedBandit::Softmax.new(0.01, 3)
 
 # Trial 1
 probs = sm.bulk_update([1000,1000,1000], [72,57,49])
+counts = probs.map{|p| (p*3000).round }
+
 # Trial 2
-probs = sm.bulk_update([1000,1000,1000], [65,46,52])
+probs = sm.bulk_update(counts, [154,17,32])
 ```
 
 
