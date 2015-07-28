@@ -9,7 +9,7 @@ Other major algorithms are under development.
 
 ## Installation
 
-By executing the following line, you can install the gem file from GitHub.
+By executing the following line, you can install the gem from the GitHub repo.
 
     $ gem specific_install -l 'git://github.com/vasilyjp/multi_armed_bandit.git'
 
