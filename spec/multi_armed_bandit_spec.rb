@@ -11,7 +11,7 @@ describe MultiArmedBandit::Softmax do
   counts = [100,100,100,100,100]
   rewards = [1,1,1,1,1]
 
-  it 'sum of prob list equals 1.0' do
+  it "bulk_update's sum of prob list equals 1.0" do
  	sm = MultiArmedBandit::Softmax.new(0.01, 5)
  	probs = sm.bulk_update(counts, rewards)
  	# round 15 decimal places
@@ -32,4 +32,16 @@ describe MultiArmedBandit::Softmax do
  	expect(probs).to eq([0.2,0.2,0.2,0.2,0.2])
   end	
 
+  it 'Update method words' do
+ 	sm = MultiArmedBandit::Softmax.new(1, 3)
+ 	sm.update(0, 0)
+ 	sm.update(1, 0)
+ 	sm.update(2, 0)
+ 	sm.update(0, 1)
+ 	sm.update(1, 1)
+ 	sm.update(2, 1)
+        expect(sm.values).to eq([0.5, 0.5, 0.5])
+  end	
+
+  
 end 

@@ -4,6 +4,4 @@ require "multi_armed_bandit/softmax"
 module MultiArmedBandit
   # Your code goes here...
 
-
-
 end
