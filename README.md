@@ -14,7 +14,7 @@ By executing the following line, you can install the gem from the GitHub repo.
 
 ## Usage
 
-Include MultiArmedBandit class by putting the following code.
+Include MultiArmedBandit module by putting the following code.
 ```ruby
 require 'multi_armed_bandit'
 include MultiArmedBandit
