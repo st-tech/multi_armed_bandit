@@ -20,7 +20,7 @@ By executing the following line, you can install the gem from the GitHub repo.
 require 'multi_armed_bandit'
 include MultiArmedBandit
 
-# Create a object
+# Create an object
 sm = MultiArmedBandit::Softmax.new(0.01, 3)
 
 # Trial 1
