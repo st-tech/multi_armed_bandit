@@ -5,7 +5,7 @@ This repo contains Ruby code for solving Multi-Armed Bandit problems. This inclu
 * Epsilon-Greedy
 * Softmax
 
-Othrer major algorithms like UCB, Reinforcement Comparison,  will be forthcoming.
+Othrer major algorithms such as UCB and Bayesian Bandit will be forthcoming.
 
 ## Installation
 
