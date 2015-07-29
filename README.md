@@ -2,8 +2,8 @@
 
 This repo contains Ruby code for solving Multi-Armed Bandit problems. This includes the following algorithms:
 
+* Epsilon-Greedy
 * Softmax
-* Epsilon-Greedy (under development)
 
 ## Installation
 
