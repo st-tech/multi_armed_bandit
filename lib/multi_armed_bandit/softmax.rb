@@ -4,19 +4,20 @@ module MultiArmedBandit
 
   class Softmax
 
-    attr_accessor :temperature, :counts, :values, :probs
+    attr_accessor :temperature, :counts, :values, :probs, :n_arms
 
     # Initialize an object
     def initialize(temperature, n_arms)
+      @n_arms = n_arms
       @temperature = temperature
-      reset(n_arms)    
+      reset()    
     end
 
     # Reset instance variables
-    def reset(n_arms)
-      @counts = Array.new(n_arms, 0)
-      @values = Array.new(n_arms, 0.0)
-      @probs = Array.new(n_arms, 0.0)
+    def reset()
+      @counts = Array.new(@n_arms, 0)
+      @values = Array.new(@n_arms, 0.0)
+      @probs = Array.new(@n_arms, 0.0)
     end
 
     # Update in a lump. new_counts is a list of each arm's trial number and
