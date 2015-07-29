@@ -13,17 +13,17 @@ describe MultiArmedBandit::Softmax do
  	expect(sum).to eq(1.0)
   end	
 
-  it 'Reset method works' do
- 	sm = MultiArmedBandit::Softmax.new(0.01, 3)
- 	sm.bulk_update(counts, rewards)
- 	sm.reset()
- 	expect(sm.counts).to eq([0,0,0])
-  end	
-
   it 'Retuen values of bulk_update are correct' do
  	sm = MultiArmedBandit::Softmax.new(0.01, 5)
  	probs = sm.bulk_update(counts, [1,1,1,1,1])
  	expect(probs).to eq([0.2,0.2,0.2,0.2,0.2])
+  end	
+
+  it 'Reset method works' do
+ 	sm = MultiArmedBandit::Softmax.new(0.01, 5)
+ 	sm.bulk_update(counts, rewards)
+ 	sm.reset()
+ 	expect(sm.counts).to eq([0,0,0,0,0])
   end	
 
   it 'Update method works' do
