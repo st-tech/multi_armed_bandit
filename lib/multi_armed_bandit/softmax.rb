@@ -31,7 +31,7 @@ module MultiArmedBandit
       # update expectations of each arm
       new_values = []
       @counts.zip( new_rewards ).each do |n, reward|
-        new_values << reward / n
+        new_values << reward / n.to_f
       end
       @values = new_values
 
