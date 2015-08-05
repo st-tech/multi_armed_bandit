@@ -22,17 +22,18 @@ module MultiArmedBandit
 
     # Update in a lump. new_counts is a list of each arm's trial number and
     # new_rewards means a list of rewards.
+    # both each num in new_counts and new_rewards should be accumulated numbers
     def bulk_update(new_counts, new_rewards)
+
+      # update the numbers of each arm's trial
+      @counts = new_counts
 
       # update expectations of each arm
       new_values = []
-      @counts.zip(@values, new_counts, new_rewards).each do |n, value, nn, reward|
-        new_values << (n * value + reward) / (n + nn)
+      @counts.zip( new_rewards ).each do |n, reward|
+        new_values << reward / n
       end
       @values = new_values
-
-      # update the numbers of each arm's trial
-      @counts = @counts.zip(new_counts).map{|f, s| f + s}
 
       # calcurate probabilities
       z = @values.collect{|i| Math.exp(i/@temperature)}.reduce(:+)
