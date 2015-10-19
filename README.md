@@ -29,7 +29,7 @@ The second param is number of arms.
 sm = MultiArmedBandit::Softmax.new(0.01, 3)
 ```
 
-By giving lists of number of trials and rewards to bulk_update methd, it returns the predicted probabilities.
+By giving lists of number of trials and rewards to bulk_update method, it returns the predicted probabilities.
 ```ruby
 # Trial 1
 probs = sm.bulk_update([1000,1000,1000], [72,57,49])
