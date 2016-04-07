@@ -7,21 +7,22 @@ describe MultiArmedBandit::MultiplePlayTS do
 
   it "Returned number of arms is correct" do
     mpts = MultiArmedBandit::MultiplePlayTS.new(k, l)
-    arms = mpts.get_select_arms
+    arms = mpts.get_selected_arms
     expect(arms.count).to eq(l)
   end	
 
-  it 'Disp count up method works' do
+  it 'Alpha update correctly works' do
     mpts = MultiArmedBandit::MultiplePlayTS.new(k, l)
-    arms = [1,3]
-    update_disp_count(arms)
-    expect(mpts.alpha).to eq([1,2,1,2,1])
-  end	
+    mpts.last_selected_arms = [1,3]
+    mpts.update_params(1)
+    expect(mpts.alpha).to eq([1,2,1,1,1])
+  end
 
-  it 'Click count up method works' do
+  it 'Beta update correctly works' do
     mpts = MultiArmedBandit::MultiplePlayTS.new(k, l)
-    add_click_count(0)
-    expect(mpts.beta).to eq([2,1,1,1,1])
+    mpts.last_selected_arms = [1,3]
+    mpts.update_params(1)
+    expect(mpts.beta).to eq([1,1,1,2,1])
   end
 
 end 
