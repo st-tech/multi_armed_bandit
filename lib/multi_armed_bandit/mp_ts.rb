@@ -10,28 +10,28 @@ module MultiArmedBandit
     # k: num of arms
     # l: num of selected arms
     def initialize(k, l)
-      @n_arms  = n_arms
-      @n_selected_arms = n_selected_arms
+      @k = k
+      @l = l
       reset
     end
 
     # Reset instance variables
     def reset
-      @alpha = Array.new(@n_arms, 1)
-      @beta = Array.new(@n_arms, 1)
+      @alpha = Array.new(@k, 1)
+      @beta = Array.new(@k, 1)
       @r = SimpleRandom.new
     end
 
     def get_select_arms
       selected_arms = @alpha.zip(@beta).each_with_index
-                      .map{|c,i| [i, @r.beta(c[0],c[1]) ] }
-                      .sort_by{ |v| -s[1]}.
+                      .map{|c,i| [i, @r.beta(c[0],c[1]) ]}
+                      .sort_by{|v| -v[1]}
                       .map{|v| v[0]}[0..n_selected_arms-1]
       update_disp_count(selected_arms)
       return selected_arms
     end
 
-    def add_disp_count(selected_arms)
+    def update_disp_count(selected_arms)
       selected_arms.each{|i| @beta += 1}
     end
 
