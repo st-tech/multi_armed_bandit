@@ -19,6 +19,7 @@ module MultiArmedBandit
     def reset
       @alpha = Array.new(@k, 1)
       @beta = Array.new(@k, 1)
+      @last_selected_arms = Array.new(@l, 0)
       @r = SimpleRandom.new
     end
 
@@ -27,16 +28,12 @@ module MultiArmedBandit
                       .map{|c,i| [i, @r.beta(c[0],c[1]) ]}
                       .sort_by{|v| -v[1]}
                       .map{|v| v[0]}[0..@l-1]
-      update_disp_count(selected_arms)
-      return selected_arms
+      @last_selected_arms = selected_arms
     end
 
-    def update_disp_count(selected_arms)
-      selected_arms.each{|i| @beta[i] += 1}
-    end
-
-    def add_click_count(idx)
-      @alpha[idx] += 1
+    # idx: index number of clicked arm
+    def update_parameters(idx)
+      @last_selected_arms.map{|i| i==idx ? @alpha[i]+=1 : @beta[i]+=1}
     end
 
   end
