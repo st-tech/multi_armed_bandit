@@ -4,7 +4,7 @@ module MultiArmedBandit
 
   class MultiplePlayTS
 
-    attr_accessor :k, :l, :alpha, :beta
+    attr_accessor :k, :l, :alpha, :beta, :last_selected_arms
 
     # Initialize an object
     # k: num of arms
@@ -32,7 +32,7 @@ module MultiArmedBandit
     end
 
     # idx: index number of clicked arm
-    def update_parameters(idx)
+    def update_params(idx)
       @last_selected_arms.map{|i| i==idx ? @alpha[i]+=1 : @beta[i]+=1}
     end
 
