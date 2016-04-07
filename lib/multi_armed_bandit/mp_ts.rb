@@ -4,7 +4,7 @@ module MultiArmedBandit
 
   class MultiplePlayTS
 
-    attr_accessor :n_arms, :n_selected_arms, :r, :alpha, :beta
+    attr_accessor :k, :l, :alpha, :beta
 
     # Initialize an object
     # k: num of arms
@@ -22,17 +22,17 @@ module MultiArmedBandit
       @r = SimpleRandom.new
     end
 
-    def get_select_arms
+    def get_selected_arms
       selected_arms = @alpha.zip(@beta).each_with_index
                       .map{|c,i| [i, @r.beta(c[0],c[1]) ]}
                       .sort_by{|v| -v[1]}
-                      .map{|v| v[0]}[0..n_selected_arms-1]
+                      .map{|v| v[0]}[0..@l-1]
       update_disp_count(selected_arms)
       return selected_arms
     end
 
     def update_disp_count(selected_arms)
-      selected_arms.each{|i| @beta += 1}
+      selected_arms.each{|i| @beta[i] += 1}
     end
 
     def add_click_count(idx)
