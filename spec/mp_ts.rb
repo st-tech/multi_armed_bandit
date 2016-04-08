@@ -11,18 +11,24 @@ describe MultiArmedBandit::MultiplePlayTS do
     expect(arms.count).to eq(l)
   end	
 
-  it 'Alpha update correctly works' do
+  it 'Beat update correctly works when arms draw' do
     mpts = MultiArmedBandit::MultiplePlayTS.new(k, l)
-    mpts.last_selected_arms = [1,3]
-    mpts.update_params(1)
-    expect(mpts.alpha).to eq([1,2,1,1,1])
+    mpts.update_params_draw([1,3])
+    expect(mpts.beta).to eq([1,2,1,2,1])
   end
 
-  it 'Beta update correctly works' do
+  it 'Alpha update correctly works when rewarded' do
     mpts = MultiArmedBandit::MultiplePlayTS.new(k, l)
-    mpts.last_selected_arms = [1,3]
-    mpts.update_params(1)
+    mpts.update_params_draw([1,3])
+    mpts.update_params_reward(1)
     expect(mpts.beta).to eq([1,1,1,2,1])
+  end
+
+  it 'Alpha update correctly works when rewarded' do
+    mpts = MultiArmedBandit::MultiplePlayTS.new(k, l)
+    mpts.update_params_draw([1,3])
+    mpts.update_params_reward(1)
+    expect(mpts.alpha).to eq([1,2,1,1,1])
   end
 
 end 
