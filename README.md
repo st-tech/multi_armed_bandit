@@ -56,6 +56,6 @@ The gem is available as open source under the terms of the [MIT License](http://
 
 ## Reference
 ```
-[1] Aurélien Garivier and Olivier Cappé: The KL-UCB Algorithm for Bounded Stochastic Bandits and Beyond. COLT 2011, 359-376
-[2] John Myles White: Bandit Algorithms for Website Optimization. O'Reilly Media
+[1] John Myles White: Bandit Algorithms for Website Optimization. O'Reilly Media
+[2] J. Komiyama, J. Honda, and H.Nakagawa: Optimal Regret Analysis of Thompson Sampling in Stochastic Multi-armed Bandit Problem with Multiple Plays. ICML 2015
 ```
