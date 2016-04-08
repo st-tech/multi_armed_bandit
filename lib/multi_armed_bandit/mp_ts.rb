@@ -4,7 +4,7 @@ module MultiArmedBandit
 
   class MultiplePlayTS
 
-    attr_accessor :k, :l, :alpha, :beta
+    attr_accessor :k, :l, :alpha, :beta, :arm_ids
 
     # k: num of arms
     # l: num of selected arms
