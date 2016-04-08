@@ -52,6 +52,10 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/vasily
 
 
 ## License
-
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
+## Reference
+```
+[1] Aurélien Garivier and Olivier Cappé: The KL-UCB Algorithm for Bounded Stochastic Bandits and Beyond. COLT 2011, 359-376
+[2] John Myles White: Bandit Algorithms for Website Optimization. O'Reilly Media
+```
