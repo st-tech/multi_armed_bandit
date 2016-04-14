@@ -8,10 +8,12 @@ module MultiArmedBandit
 
     # k: num of arms
     # l: num of selected arms
-    def initialize(k, l)
+    def initialize(k, l, setseed=TRUE)
       @k = k
       @l = l
       @r = SimpleRandom.new
+      # By default the same random seed is used, so we change it
+      @r.set_seed if setseed==TRUE
       reset
     end
 
