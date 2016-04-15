@@ -10,7 +10,7 @@ Othrer major algorithms such as UCB and Bayesian Bandit will be forthcoming.
 
 ## Installation
 
-By executing the following line, you can install the gem from the GitHub repo.
+By executing the following line, you can install the gem from RubyGems.
 
     $ gem install multi_armed_bandit
 
