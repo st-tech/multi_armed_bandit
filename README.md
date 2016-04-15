@@ -4,7 +4,7 @@ This repo contains Ruby code for solving Multi-Armed Bandit problems. This inclu
 
 * Epsilon-Greedy
 * Softmax
-* Thomson Sampling with Multiple Play 
+* Multiple-play Thomson Sampling
 
 Othrer major algorithms such as UCB and Bayesian Bandit will be forthcoming.
 
