@@ -8,7 +8,7 @@ module MultiArmedBandit
 
     # k: num of arms
     # l: num of selected arms
-    def initialize(k, l, setseed=TRUE)
+    def initialize(k, l, setseed=true)
       @k = k
       @l = l
       @r = SimpleRandom.new
