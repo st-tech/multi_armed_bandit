@@ -13,7 +13,7 @@ module MultiArmedBandit
       @l = l
       @r = SimpleRandom.new
       # By default the same random seed is used, so we change it
-      @r.set_seed if setseed==TRUE
+      @r.set_seed if setseed==true
       reset
     end
 
